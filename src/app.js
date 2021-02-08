@@ -13,7 +13,7 @@ const app = express();
 const morganOption = NODE_ENV === "production" ? "tiny" : "common";
 app.use(morgan(morganOption));
 app.use(helmet());
-app.use(cors());
+app.use(cors({ origin: "https://noteful-client-qm47q6rdg.vercel.app/" }));
 
 app.use("/folders", FoldersRouter);
 app.use("/notes", NotesRouter);
